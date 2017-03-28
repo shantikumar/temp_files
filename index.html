@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Demo height</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+	<link rel="stylesheet" href="css/height.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<h4>Change height according to iFrame contents height</h4>
+
+
+
+			<a href="http://plugindoc.mozdev.org/testpages/test.pdf" class="embed">Download file</a>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+	<script src="http://www.jawish.org/blog/uploads/jquery.gdocsviewer.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('.embed').gdocsViewer({height: 500});
+			
+			$(".gdocsviewer iframe").load(function() {
+			    $(this).height( $(this).contents().find("body").height() );
+			});
+
+			// $("#checkHeight iframe").load(function() {
+			// 	$(this).height();
+			// });
+		});
+	</script>
+</body>
+</html>
