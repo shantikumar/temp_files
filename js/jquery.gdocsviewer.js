@@ -11,7 +11,7 @@
 	
 		var settings = {
 			width  : '600',
-			height : '700'
+			height : '800'
 		};
 		
 		if (options) { 
@@ -26,7 +26,7 @@
 				$(this).after(function () {
 					var id = $(this).attr('id');
 					var gdvId = (typeof id !== 'undefined' && id !== false) ? id + '-gdocsviewer' : '';
-					return '<div id="' + gdvId + '" class="gdocsviewer"><iframe src="https://docs.google.com/viewer?embedded=true&url=' + encodeURIComponent(file) + '" width="' + settings.width + '" height="' + settings.height + '" style="border: none;"></iframe></div>';
+					return '<div id="' + gdvId + '" class="gdocsviewer"><iframe id="IframeId" src="https://docs.google.com/viewer?embedded=true&url=' + encodeURIComponent(file) + '" width="' + settings.width + '" height="' + settings.height + '" style="border: none;"></iframe></div>';
 				})
 			}
 		});
